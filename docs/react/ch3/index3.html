@@ -1,0 +1,31 @@
+<html>
+  <body>
+    <div id="app">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Babel Script -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/jsx">
+      const app = document.getElementById("app")
+
+      // React 组件应该大写，以区分纯HTML和JavaScript
+      function Header({ title }) {
+        console.log(title); // {title: "React"}
+        // 可以在大括号内添加任何JavaScript表达式
+        return (<h1>{`Cool ${title}`}</h1>)
+      }
+
+      function HomePage() {
+        return (<div>
+          {/* Nexting the Header component */}
+          <Header title="React" />
+        </div>);
+      }
+
+      const root = ReactDOM.createRoot(app);
+      // Capitalize the React Component
+      root.render(<HomePage />);
+    </script>
+    </div>
+  </body>
+</html>
